@@ -238,7 +238,7 @@ export const skillGroups: SkillGroupData[] = [
   { label: "core", icon: "code", skills: ["React", "Next.js", "TypeScript", "JavaScript"] },
   { label: "state & data", icon: "database", skills: ["Redux", "Zustand", "TanStack Query", "GraphQL"] },
   { label: "styling & testing", icon: "checkCircle", skills: ["Tailwind", "SCSS", "Material UI", "Jest", "RTL"] },
-  { label: "backend", icon: "server", skills: ["Node.js", "[Express?]", "[Database?]"], learning: true },
+  { label: "backend", icon: "server", skills: ["Node.js", "Express.js", "MongoDB", "Mongoose", "REST APIs", "JWT Auth"], learning: true },
 ];
 
 export const contact = {
