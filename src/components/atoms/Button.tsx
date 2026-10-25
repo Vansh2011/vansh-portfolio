@@ -15,7 +15,8 @@ type ButtonProps = {
   icon?: IconName;
   /** Show a sliding arrow after the label. */
   trailingArrow?: boolean;
-  download?: boolean;
+  /** Open the link in a new browser tab. */
+  newTab?: boolean;
   onClick?: MouseEventHandler<HTMLElement>;
   className?: string;
   type?: "button" | "submit";
@@ -38,7 +39,7 @@ export function Button({
   href,
   icon,
   trailingArrow,
-  download,
+  newTab,
   onClick,
   className,
   type = "button",
@@ -68,7 +69,7 @@ export function Button({
     );
   }
 
-  const isInternal = href.startsWith("/") && !download;
+  const isInternal = href.startsWith("/") && !newTab;
   if (isInternal) {
     return (
       <Link href={href} onClick={onClick} className={classes}>
@@ -77,17 +78,17 @@ export function Button({
     );
   }
 
-  const isExternal = href.startsWith("http");
+  const openInNewTab = newTab || href.startsWith("http");
   return (
     <a
       href={href}
       onClick={onClick}
       className={classes}
-      download={download || undefined}
-      target={isExternal ? "_blank" : undefined}
-      rel={isExternal ? "noopener noreferrer" : undefined}
+      target={openInNewTab ? "_blank" : undefined}
+      rel={openInNewTab ? "noopener noreferrer" : undefined}
     >
       {content}
+      {newTab && <span className="sr-only"> (opens in a new tab)</span>}
     </a>
   );
 }

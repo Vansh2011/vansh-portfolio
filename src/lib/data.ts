@@ -37,7 +37,7 @@ export const hero = {
   lead: "I build frontends for",
   words: ["10M+ shoppers.", "design studios.", "internal ops tools.", "growing brands."],
   intro:
-    "Frontend engineer on the path to full stack. I work in React, Next.js and TypeScript, and I'm building out my backend skills with Node.js. Right now I'm rebuilding a lending operations dashboard from scratch and moving legacy apps from Node 14 to Node 20. Before that, I shipped UI for an e-commerce platform serving 10M+ users.",
+    "Frontend engineer on the path to full stack. I work in React, Next.js and TypeScript, and I'm building out my backend skills with Node.js. Right now I'm rebuilding an operations dashboard from scratch and moving legacy apps from Node 14 to Node 20. Before that, I shipped UI for an e-commerce platform serving 10M+ users.",
 };
 
 export type TerminalLine =
@@ -49,13 +49,13 @@ export const terminalLines: TerminalLine[] = [
   { kind: "cmd", text: "whoami" },
   { kind: "out", text: "vansh — frontend → full stack" },
   { kind: "cmd", text: "cat current.txt" },
-  { kind: "out", text: "→ LAP dashboard revamp", muted: "(Next.js)" },
+  { kind: "out", text: "→ ops dashboard revamp", muted: "(Next.js)" },
   { kind: "out", text: "→ node 14 → 20 migration" },
   { kind: "check", text: "dashboard-01" },
   { kind: "check", text: "dashboard-02" },
   { kind: "check", text: "dashboard-03" },
   { kind: "cmd", text: "status" },
-  { kind: "out", text: "open to work", accent: ":)" },
+  { kind: "out", text: "shipping", accent: ":)" },
   { kind: "cmd", text: "coffee --level" },
   { kind: "out", text: "low", muted: "¯\\_(ツ)_/¯" },
 ];
@@ -111,19 +111,19 @@ export const highlights = [
 
 export const currentWork = {
   title: "Now at Nextmantra",
-  note: "Internal client tools, so no screenshots",
+  note: "Client work, kept general",
   rows: [
     {
-      title: "Lending operations dashboard rebuild",
-      body: "Rebuilding a Loan Against Property dashboard from scratch as a Next.js + TypeScript app on Node 20, including document verification for KYC and property documents.",
+      title: "Operations dashboard rebuild",
+      body: "Rebuilding an operations dashboard for a lending client from scratch as a Next.js + TypeScript app on Node 20.",
     },
     {
       title: "Node 14 → 20 migration",
-      body: "Moved 3 more internal dashboards to Node 20, fixing deprecated packages and breaking changes with no production disruption.",
+      body: "Migrated 3 internal dashboards from Node 14 to Node 20, fixing deprecated packages and breaking changes with no production disruption.",
     },
     {
-      title: "Commission clawback system",
-      body: "A role-based dashboard for finance teams. The backend sends the allowed actions for each record, so the UI has no hardcoded role or status logic.",
+      title: "Role-based finance dashboard",
+      body: "A role-based internal dashboard where the backend sends the allowed actions for each record, so the UI has no hardcoded role or status logic.",
     },
   ],
 };
@@ -199,10 +199,10 @@ export const jobs: Job[] = [
     short: "SDE · 2026 — now",
     place: "Bengaluru",
     points: [
-      "Rebuilding a Loan Against Property dashboard from scratch as a Next.js + TypeScript app on Node 20.",
-      "Building document verification workflows for KYC and property documents: Aadhaar, PAN, property papers, bills.",
-      "Migrated 3 more internal dashboards from Node 14 to Node 20 with no production disruption.",
-      "Built a role-based Partner Commission Clawback dashboard and a Udyam verification flow on Decentro APIs.",
+      "Rebuilding an operations dashboard for a lending client as a Next.js + TypeScript app on Node 20.",
+      "Building document review and verification workflows for the client's operations team.",
+      "Migrated 3 internal dashboards from Node 14 to Node 20 with no production disruption.",
+      "Built a role-based finance dashboard and a business verification flow integrated with third-party APIs.",
     ],
   },
   {
@@ -299,11 +299,11 @@ export const fnpCaseStudy = {
     },
     {
       title: "How businesses read their users",
-      body: "I learned how web analytics works in practice, with tools like Google Analytics and CleverTap, and how the business uses that event data to understand customer trends and make decisions.",
+      body: "I learned how web analytics works in practice, and how a business uses event data to understand customer trends and make decisions.",
     },
     {
       title: "Batching, by building it",
-      body: "I built an in-house analytics tool that queued events in localStorage and sent them in batches every 10 seconds instead of one request per event. That's where the idea of batching really clicked for me.",
+      body: "I worked on event tracking that grouped analytics events and sent them in batches, instead of making one request per event. That's where the idea of batching really clicked for me.",
     },
     {
       title: "Shipping at scale",
@@ -312,13 +312,13 @@ export const fnpCaseStudy = {
   ],
   tradeoff: {
     title: "A tradeoff I made",
-    body: "Batching analytics every 10 seconds meant far fewer network requests and less load on the page, but data arrived up to 10 seconds late, and events still sitting in the queue could be lost if a user closed the tab before the next send. For trend analysis, that small delay and occasional gap was an acceptable price for a lighter page.",
+    body: "Sending events in batches meant far fewer network requests and less work for the page, but the data arrived slightly later, and anything still waiting in a batch could be missed if a user left before it was sent. For understanding trends, that small delay was a fair price for a lighter, faster page.",
   },
   differently: {
     title: "What I'd do differently",
     points: [
-      "Send any queued events when the page is hidden or closed, using navigator.sendBeacon, so nothing is lost when a user leaves mid-batch.",
-      "Cap the queue size and move off localStorage (which is synchronous and size-limited) to IndexedDB if event volume grew.",
+      "Make sure any pending events are always sent when a user leaves the page, so nothing is lost mid-batch.",
+      "Plan for scale earlier: limit how many events can wait in a batch, and choose an approach that holds up as event volume grows.",
       "On the Next.js revamp, decide earlier which components truly need to run in the browser, and keep the rest as server components to ship less JavaScript.",
     ],
   },

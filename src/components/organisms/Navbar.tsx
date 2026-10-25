@@ -60,7 +60,7 @@ export function Navbar() {
               {navLinks.map((l) => (
                 <NavLink key={l.href} href={l.href} label={l.label} />
               ))}
-              <Button href={site.resume} icon="download" size="sm" download className="font-mono text-[13px]">
+              <Button href={site.resume} icon="file" size="sm" newTab className="font-mono text-[13px]">
                 resume.pdf
               </Button>
             </div>
@@ -82,8 +82,8 @@ export function Navbar() {
               {navLinks.map((l) => (
                 <NavLink key={l.href} href={l.href} label={l.label} index={l.index} variant="stacked" onClick={close} />
               ))}
-              <Button href={site.resume} icon="download" variant="primary" download onClick={close} className="mt-4">
-                Download resume
+              <Button href={site.resume} icon="file" variant="primary" newTab onClick={close} className="mt-4">
+                View resume
               </Button>
             </Container>
           </div>

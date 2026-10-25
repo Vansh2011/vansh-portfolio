@@ -1,7 +1,7 @@
 import { Button } from "@/components/atoms/Button";
 import { site } from "@/lib/data";
 
-/** GitHub + LinkedIn buttons, optionally with a resume download. */
+/** GitHub + LinkedIn buttons, optionally with a resume link. */
 export function SocialLinks({ size = "md", withResume = false }: { size?: "md" | "sm"; withResume?: boolean }) {
   return (
     <>
@@ -12,8 +12,8 @@ export function SocialLinks({ size = "md", withResume = false }: { size?: "md" |
         LinkedIn
       </Button>
       {withResume && (
-        <Button href={site.resume} icon="download" size={size} variant="primary" download>
-          Download resume
+        <Button href={site.resume} icon="file" size={size} variant="primary" newTab>
+          View resume
         </Button>
       )}
     </>
