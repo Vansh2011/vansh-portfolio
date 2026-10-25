@@ -7,6 +7,7 @@ import { Container } from "@/components/atoms/Container";
 import { IconButton } from "@/components/atoms/IconButton";
 import { Toast } from "@/components/atoms/Toast";
 import { NavLink } from "@/components/molecules/NavLink";
+import { ScrollProgress } from "@/components/molecules/ScrollProgress";
 import { easterEggs, navLinks, site } from "@/lib/data";
 
 export function Navbar() {
@@ -88,8 +89,7 @@ export function Navbar() {
           </div>
         )}
 
-        {/* Reading progress (scroll-driven; hidden where unsupported) */}
-        <div aria-hidden="true" className="scroll-progress absolute inset-x-0 -bottom-px h-0.5 bg-accent" />
+        <ScrollProgress />
       </header>
 
       {toast && <Toast key={toast.id} message={toast.text} />}
