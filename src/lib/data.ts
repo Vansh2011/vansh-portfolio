@@ -37,7 +37,7 @@ export const hero = {
   lead: "I build frontends for",
   words: ["10M+ shoppers.", "design studios.", "internal ops tools.", "growing brands."],
   intro:
-    "Frontend engineer on the path to full stack. I work in React, Next.js and TypeScript, and I'm building out my backend skills with Node.js. Right now I'm rebuilding an operations dashboard from scratch and moving legacy apps from Node 14 to Node 20. Before that, I shipped UI for an e-commerce platform serving 10M+ users.",
+    "Frontend engineer on the path to full stack. I work in React, Next.js and TypeScript, and I'm building out my backend skills with Node.js. Right now I'm rebuilding an operations dashboard from scratch and migrating apps from Node 14 to Node 20. Before that, I contributed to the consumer B2C web app of an e-commerce platform serving 10M+ users.",
 };
 
 export type TerminalLine =
@@ -81,7 +81,7 @@ export const featured = {
   category: "E-commerce · 10M+ users",
   title: "Faster, better-tested storefront for Ferns N Petals",
   summary:
-    "I built product listing, search filters and a 3-step checkout for one of India's biggest gifting platforms. I cut the initial JS bundle by 20%, made First Contentful Paint 0.8s faster, and raised test coverage from 45% to 87%.",
+    "I built product listing, search filters and a 3-step checkout for one of India's biggest gifting platforms. I cut the initial JS bundle by 20%, improved Core Web Vitals (LCP, CLS and INP), and raised test coverage from 45% to 87%.",
   stack: ["React", "Next.js", "Redux", "Webpack", "Jest + RTL"],
   image: {
     src: "/images/fnp-listing.jpg",
@@ -111,7 +111,7 @@ export const highlights = [
 
 export const currentWork = {
   title: "Now at Nextmantra",
-  note: "Client work, kept general",
+  note: "Working for Werize",
   rows: [
     {
       title: "Operations dashboard rebuild",
@@ -212,9 +212,9 @@ export const jobs: Job[] = [
     short: "ASE · 2025 — 2026",
     place: "Gurugram",
     points: [
-      "Built and maintained 25+ React and Next.js components for a storefront serving 10M+ users.",
+      "Contributed to the consumer B2C web app of an e-commerce platform serving 10M+ users, building and maintaining 25+ React and Next.js components.",
+      "Optimized the initial JS bundle by 20% and improved Core Web Vitals (LCP, CLS and INP) with route-based code splitting, lazy loading and Webpack tuning.",
       "Raised Jest test coverage from 45% to 87%, cutting production bug reports by about 30%.",
-      "Improved Core Web Vitals with route-based code splitting and lazy loading.",
       "Reviewed 50+ pull requests for WCAG 2.1 accessibility and cross-browser support.",
     ],
   },
